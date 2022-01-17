@@ -1,0 +1,32 @@
+{
+  "name": "star-calculator",
+  "version": "2.0.0",
+  "description": "A node app that caclualtes luminosity and other statistics about stars ",
+  "main": "app.js",
+  "scripts": {
+    "test": "test",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rubenavaldez/Star-Calculator.git"
+  },
+  "keywords": [
+    "Astronomy",
+    "Astrophysics",
+    "Star",
+    "Space",
+    "Node"
+  ],
+  "author": "Ruben Valdez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rubenavaldez/Star-Calculator/issues"
+  },
+  "homepage": "https://github.com/rubenavaldez/Star-Calculator#readme",
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "figlet": "^1.5.2",
+    "inquirer": "^8.2.0"
+  }
+}
