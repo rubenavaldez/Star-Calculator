@@ -9,8 +9,18 @@ const inquirer = require("inquirer")
 inquirer.prompt([
     {
         type:"input",
-        message:"What is the anme of the star",
-        name:"name"        
+        message:"What is the name of the star?",
+        name:"starName"        
+    },
+    {
+        type:"input",
+        message: "What is the parralax of the star?",
+        name:"parralax"
+    },
+    {
+        type:"input",
+        message:"What is the flux of the star in scientific notation?\nex:1.84e-8",
+        name:"flux"
     }
 
 ])
