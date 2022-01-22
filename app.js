@@ -2,10 +2,33 @@ const inquirer = require("inquirer")
 
 
 
+inquirer.prompt([
+    {
+        type:"list",
+        message:"Would you like to know about a star or a planet",
+        name:"selection",
+        choices:["star","planet"]
 
+    }
+]).then((answers)=>{
+    console.log(answers)
+    if(answers.selection == "star"){
+        starCalc()
+    }else{
+        console.log("you chose a planet")
+    }
+})
+.catch((err)=>{
+    if(err.isTtyError){
 
+        console.log(err.isTtyError)
+    }else{
+        console.log(err)
+    }
+})
 
-// Start inquirer 
+function starCalc(){
+ 
 inquirer.prompt([
     {
         type:"input",
@@ -25,8 +48,6 @@ inquirer.prompt([
 
 ])
 .then((answers)=>{
-
-
        
         function LumonistyCalculator(starName, fluxString, parralax) {
             let flux = eval(fluxString)
@@ -39,12 +60,6 @@ inquirer.prompt([
             return `${starName} has a luminosity of ${lumonisty.toFixed(2)}L(sun).
                 It's distance from earth is ${distance.toFixed(2)} parsec
                 That is ${(distance * 3.26).toFixed(2)} light years away from earth` 
-                
-                // Raw data
-                // luminosity ${lumonisty}
-                // distance ${distance}
-                // lightyears ${distance * 3.26}
-                // \n`
         
         
         }
@@ -60,3 +75,4 @@ inquirer.prompt([
         console.log(err)
     }
 })
+}
