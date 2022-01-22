@@ -19,7 +19,7 @@ inquirer.prompt([
     },
     {
         type:"input",
-        message:"What is the flux of the star in scientific notation?\nex:1.84e-8",
+        message:"What is the flux of the star in scientific notation? (ex:1.84e-8)",
         name:"flux"
     }
 
@@ -27,9 +27,29 @@ inquirer.prompt([
 .then((answers)=>{
 
 
-        console.log(answers)
+       
+        function LumonistyCalculator(starName, fluxString, parralax) {
+            let flux = eval(fluxString)
+            //console.log(flux)
+            let C = 9.94 * (10 ** 6)
+            let paraSquare = parseFloat(parralax) ** 2
+            let fluxPara = flux / paraSquare
+            let lumonisty = C * Math.PI * fluxPara
+            let distance = 1 / parralax
+            return `${starName} has a luminosity of ${lumonisty.toFixed(2)}L(sun).
+                It's distance from earth is ${distance.toFixed(2)} parsec
+                That is ${(distance * 3.26).toFixed(2)} light years away from earth` 
+                
+                // Raw data
+                // luminosity ${lumonisty}
+                // distance ${distance}
+                // lightyears ${distance * 3.26}
+                // \n`
+        
+        
+        }
     
-
+        console.log(LumonistyCalculator(answers.starName, answers.flux, answers.parralax))
 
 })
 .catch((err)=>{
