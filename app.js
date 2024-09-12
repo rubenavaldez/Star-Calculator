@@ -4,33 +4,6 @@ const inquirer = require("inquirer")
 
 inquirer.prompt([
     {
-        type:"list",
-        message:"Would you like to know about a star or a planet",
-        name:"selection",
-        choices:["star","planet"]
-
-    }
-]).then((answers)=>{
-    console.log(answers)
-    if(answers.selection == "star"){
-        starCalc()
-    }else{
-        console.log("you chose a planet")
-    }
-})
-.catch((err)=>{
-    if(err.isTtyError){
-
-        console.log(err.isTtyError)
-    }else{
-        console.log(err)
-    }
-})
-
-function starCalc(){
- 
-inquirer.prompt([
-    {
         type:"input",
         message:"What is the name of the star?",
         name:"starName"        
@@ -75,4 +48,3 @@ inquirer.prompt([
         console.log(err)
     }
 })
-}
