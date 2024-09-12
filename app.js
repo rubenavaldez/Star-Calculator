@@ -30,7 +30,14 @@ inquirer.prompt([
             let fluxPara = flux / paraSquare
             let lumonisty = C * Math.PI * fluxPara
             let distance = 1 / parralax
-            return `${starName} has a luminosity of ${lumonisty.toFixed(2)}L(sun).
+            return `
+           \\   /  
+            .-.
+        -- (   ) --
+            '-'
+           /   \\               
+            
+            ${starName} has a luminosity of ${lumonisty.toFixed(2)}L(sun).
                 It's distance from earth is ${distance.toFixed(2)} parsec
                 That is ${(distance * 3.26).toFixed(2)} light years away from earth` 
         
